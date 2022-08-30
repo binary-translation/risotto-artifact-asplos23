@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+export RISOTTO_ROOT=${PWD}
