@@ -6,8 +6,8 @@ for p in master-6.1.0 no-fences tcg-tso risotto; do
     git switch ${p}
 
     # create the build directory
-    mkdir -p ${RISOTTO_ROOT}/build/${p}
-    cd ${RISOTTO_ROOT}/build/${p}
+    mkdir -p ${RISOTTO_ROOT}/build/qemu/${p}
+    cd ${RISOTTO_ROOT}/build/qemu/${p}
 
     # build qemu
     ${RISOTTO_ROOT}/qemu/configure --target-list=x86_64-linux-user
