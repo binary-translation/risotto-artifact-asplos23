@@ -24,11 +24,30 @@ You can find out more information on the [Nix download page](https://nixos.org/d
 
 ## Building the software
 Before running the experiments, we need to build the software and the benchmarks.
+You can try to build everything at once or separately.
+
+### Building everything
+You can build everything by executing:
+
+```sh
+source sourceme
+./scripts/build.sh
+```
+
+If everything works fine, you can skip to [Running the benchmarks](#running-the-benchmarks).
+
+Note that this script downloads the pre-built binaries for the benchmarks and does not build them. If you want to build them, check the following sections.
 
 ### Building QEMU
-You need to build our modified QEMU for the evaluation to work. It is located in the `qemu` submodule and can be built by running `scripts/build_qemu.sh`. Since it will be executed on the ARM server, it has to be built for ARM. To simplify this, we recommend to build this directly on the ARM machine you will use to reproduce the results of the paper.
+You need to build our modified QEMU for the evaluation to work. It is located in the `qemu` submodule and can be built by running:
+```sh
+source sourceme
+nix-shell --run scripts/build_qemu.sh default.nix
+```
 
-After running this script, you should have four versions of QEMU built, located in `qemu/build/`:
+Since QEMU will be executed on the ARM machine, it has to be built for ARM. To simplify this, we recommend to build this directly on the ARM machine you will use to reproduce the results of the paper.
+
+After running this script, you should have four versions of QEMU built, located in `build/qemu/`:
 * `master-6.1.0`: this is the official QEMU 6.1.0, unmodified (used as a baseline)
 * `no-fences`: QEMU 6.1.0 but no fence is generated for any memory access. This version may create incorrect executions (used as a comparison)
 * `tcg-tso`: QEMU 6.1.0 + our memory mappings (used to evaluate the performance of our mappings)
@@ -42,7 +61,10 @@ The benchmarks need to be built twice: once for arm64 and once for x86_64. You c
 
 #### Downloading pre-built binaries
 We provide an archive with all benchmarks packaged for both x86_64 and arm64 at [this address]().
-You can just download and extract the archive wherever you want with `tar xf risotto-benchmarks.tar.xz`.
+You can just download and extract the archive wherever you want with:
+```sh
+tar xf risotto-benchmarks.tar.xz
+```
 
 #### Build binaries on x86_64 and arm64 machines
 
