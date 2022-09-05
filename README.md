@@ -60,10 +60,10 @@ The benchmarks need to be built twice: once for arm64 and once for x86_64. You c
 * Build everything on the same machine with cross-compilation for the non-native version.
 
 #### Downloading pre-built binaries
-We provide an archive with all benchmarks packaged for both x86_64 and arm64 at [this address](https://nextcloud.in.tum.de/index.php/s/AFBrjRbsHkcgF7b).
-You can just download and extract the archive wherever you want with:
+We provide an archive with all benchmarks packaged for both x86_64 and arm64 at [this address](https://nextcloud.in.tum.de/index.php/s/XenwcXiHy4TTZMC).
+You can just download and extract the archives wherever you want with:
 ```sh
-tar xf parsec-bins.tar.xz
+tar xf <archive.tar.xz>
 ```
 
 These archives contain the binaries and input data for each benchmark.
