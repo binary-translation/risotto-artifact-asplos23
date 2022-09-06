@@ -26,12 +26,6 @@ let
     p.cmake
     p.gettext
     p.autoconf
-    xlibs.xorgproto
-    xlibs.libXext
-    xlibs.libXt
-    xlibs.libXmu
-    xlibs.libXi
-    xlibs.libXau
     p.sqlite
     p.openssl
     p.yasm
