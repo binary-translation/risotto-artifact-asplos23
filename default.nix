@@ -40,8 +40,7 @@ in
 
 with import (fetchTarball tarball) {};
 
-#gcc10Stdenv.mkDerivation {
-(pkgs.buildFHSUserEnv {
+gcc10Stdenv.mkDerivation {
   X86-DEPS = buildEnv {
     name = "risotto-x86";
     paths = deps x86pkgs;
@@ -57,4 +56,4 @@ with import (fetchTarball tarball) {};
   ];
   buildInputs = pypkgs ++ deps pkgs;
   runScript = "bash";
-}).env
+}
