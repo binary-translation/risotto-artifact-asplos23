@@ -12,6 +12,7 @@ let
              pkgs.python3Packages.matplotlib ];
 
   deps = p: [
+    p.gcc10
     p.zlib
     p.curl
     p.getopt
@@ -39,7 +40,8 @@ in
 
 with import (fetchTarball tarball) {};
 
-gcc10Stdenv.mkDerivation {
+#gcc10Stdenv.mkDerivation {
+(pkgs.buildFHSUserEnv {
   X86-DEPS = buildEnv {
     name = "risotto-x86";
     paths = deps x86pkgs;
@@ -54,4 +56,5 @@ gcc10Stdenv.mkDerivation {
     bashInteractive
   ];
   buildInputs = pypkgs ++ deps pkgs;
-}
+  runScript = "bash";
+}).env
