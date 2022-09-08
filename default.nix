@@ -20,7 +20,7 @@ let
     p.binutils
     p.bison
     p.bc
-    p.pkg-config
+    p.pkg-config-unwrapped
     p.m4
     p.which
     p.gnumake
@@ -30,8 +30,6 @@ let
     p.sqlite
     p.openssl
     p.yasm
-#    p.glib
-#    p.libxml2
     p.ninja
     p.pv
   ];
