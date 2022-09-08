@@ -30,8 +30,8 @@ let
     p.sqlite
     p.openssl
     p.yasm
-    p.glib
-    p.libxml2
+#    p.glib
+#    p.libxml2
     p.ninja
     p.pv
   ];
