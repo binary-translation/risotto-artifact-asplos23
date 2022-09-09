@@ -4,6 +4,9 @@
 [submodule "benchmarks/phoenix"]
 	path = benchmarks/phoenix
 	url = https://github.com/rgouicem/phoenix.git
+[submodule "a2a-benchmarks"]
+	path = a2a-benchmarks
+	url = https://github.com/rgouicem/a2a-benchmarks.git
 [submodule "benchmarks/sqlite"]
 	path = benchmarks/sqlite
 	url = https://github.com/sqlite/sqlite

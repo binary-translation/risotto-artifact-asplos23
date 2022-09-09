@@ -12,6 +12,7 @@ let
              pkgs.python3Packages.matplotlib ];
 
   deps = p: [
+    p.gcc10
     p.zlib
     p.curl
     p.getopt
@@ -19,17 +20,16 @@ let
     p.binutils
     p.bison
     p.bc
-    p.pkg-config
+    p.pkg-config-unwrapped
     p.m4
     p.which
+    p.gnumake
     p.cmake
     p.gettext
     p.autoconf
     p.sqlite
     p.openssl
     p.yasm
-    p.glib
-    p.libxml2
     p.ninja
     p.pv
   ];
@@ -53,4 +53,5 @@ gcc10Stdenv.mkDerivation {
     bashInteractive
   ];
   buildInputs = pypkgs ++ deps pkgs;
+  runScript = "bash";
 }
