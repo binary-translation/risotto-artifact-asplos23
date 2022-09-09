@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
-cd ${RISOTTO_ROOT}/benchmarks
+mkdir -p ${RISOTTO_ROOT}/build
+cd ${RISOTTO_ROOT}/build
 
 # parsec
 echo "Downloading PARSEC pre-built binaries archive..."
