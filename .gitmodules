@@ -10,3 +10,6 @@
 [submodule "benchmarks/sqlite"]
 	path = benchmarks/sqlite
 	url = https://github.com/sqlite/sqlite
+[submodule "proofs"]
+	path = proofs
+	url = git@github.com:binary-translation/risotto-proofs.git

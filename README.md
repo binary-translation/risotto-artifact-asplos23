@@ -77,3 +77,17 @@ These archives contain the binaries and input data for each benchmark.
 ## Plotting the results
 
 ## Proofs
+
+The proofs have their own `README.md` (inside `proofs/`), with explanations. For evaluation, it's easiest to use the pre-build Docker image. Check the proofs with:
+
+```sh
+docker run -it --rm sourcedennis/risotto-proofs:latest agda src/Main.agda --safe
+```
+
+Generate HTML-rendered Agda with (into local directory `html/`):
+
+```sh
+docker run -it --rm -v "$PWD/html:/proofs/html" sourcedennis/risotto-proofs:latest agda --html --html-dir=html src/Main.agda
+```
+
+Or, build the Docker images yourself with the contained `proofs/Dockerfile`.
