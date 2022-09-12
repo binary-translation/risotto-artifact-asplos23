@@ -17,7 +17,5 @@ echo performance | sudo tee /sys/devices/system/cpu/cpufreq/policy*/scaling_gove
 ${TASKSET} ./a2a-benchmarks/bench.py  -b micro.math -d native -r native -o results/results.csv -a aarch64 -n $(nproc) -i ${NR_RUNS} -t native -c configs/native.config -vvv
 
 # QEMUs
-for q in master-6.1.0 risotto; do
-    ${TASKSET} ./a2a-benchmarks/bench.py  -b micro.math -d native -r qemu -o results/results.csv -a x86_64 -n $(nproc) -i ${NR_RUNS} -t $q -c configs/qemu-${q}.config -vvv
-done
-
+${TASKSET} ./a2a-benchmarks/bench.py -b micro.math -d native -r qemu -o results/results.csv -a x86_64 -n $(nproc) -i ${NR_RUNS} -t master-6.1.0 -c configs/qemu-master-6.1.0.config -vvv
+${TASKSET} ./a2a-benchmarks/bench.py -b micro.math -d native -r qemu --run-opt='-nlib configs/nlib/math.nmi' -o results/results.csv -a x86_64 -n $(nproc) -i ${NR_RUNS} -t risotto -c configs/qemu-risotto.config -vvv
