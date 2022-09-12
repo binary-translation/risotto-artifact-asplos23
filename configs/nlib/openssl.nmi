@@ -1,0 +1,69 @@
+library "libssl.so.3";
+
+i32 OPENSSL_init_ssl(u64 opts, const ptr settings);
+
+# ptr OSSL_STORE_LOADER_new(ptr e, const string scheme);
+
+
+ptr CRYPTO_malloc(ulong sz, ptr f, i32 l);
+ptr CRYPTO_zalloc(ulong sz, ptr f, i32 l);
+ptr CRYPTO_realloc(ptr a, ulong sz, ptr f, i32 l);
+ptr CRYPTO_clear_realloc(ptr a, ulong old, ulong sz, ptr f, i32 l);
+
+void CRYPTO_clear_free(ptr p, ulong sz, ptr f, i32 l);
+void CRYPTO_free(ptr p, ptr f, i32 l);
+
+i32 ENGINE_init(ptr e);
+i32 ENGINE_register_all_complete();
+ptr ENGINE_by_id(const string id);
+i32 ENGINE_ctrl(ptr e, i32 cmd, i64 i, ptr p, ptr f);
+i32 ENGINE_ctrl_cmd(ptr e, string cmd_name, i64 i, ptr p, ptr f, i32 opt);
+i32 ENGINE_free(ptr e);
+i32 ENGINE_finish(ptr e);
+
+ptr ENGINE_get_pkey_asn1_meth_str(ptr e, const string str, i32 len);
+
+ptr BN_new();
+#void BN_init(ptr p);
+void BN_clear(ptr p);
+void BN_free(ptr p);
+void BN_clear_free(ptr p);
+
+const ptr BN_value_one();
+i32 BN_set_word(ptr a, ulong w);
+ulong BN_get_word(ptr a);
+
+ptr EVP_PKEY_CTX_new_id(i32 id, ptr e);
+ptr EVP_PKEY_CTX_dup(ptr ctx);
+void EVP_PKEY_CTX_free(ptr ctx);
+
+i32 EVP_PKEY_keygen_init(ptr ctx);
+i32 EVP_PKEY_keygen(ptr ctx, ptr ppkey);
+i32 EVP_PKEY_paramgen_init(ptr ctx);
+i32 EVP_PKEY_paramgen(ptr ctx, ptr ppkey);
+
+ptr EVP_PKEY_asn1_find_str(ptr e, const string str, i32 len);
+i32 EVP_PKEY_asn1_get0_info(ptr pp, ptr baseid, ptr flags, ptr pinfo, ptr str, ptr ameth);
+
+#i32 EVP_PKEY_CTX_set_rsa_keygen_bits(ptr ctx, i32 mbits);
+#i32 EVP_PKEY_CTX_set1_rsa_keygen_pubexp(ptr ctx, ptr pubexp);
+#i32 EVP_PKEY_CTX_set_rsa_keygen_primes(ptr ctx, i32 primes);
+
+
+i32 RAND_bytes(ptr buf, i32 num);
+
+library "libcrypto.so.3";
+
+ptr EVP_PKEY_CTX_new(ptr pkey, ptr e);
+
+i32 RSA_pkey_ctx_ctrl(ptr ctx, i32 optype, i32 cmd, i32 p1, ptr p2);
+ptr d2i_PrivateKey(i32 type, ptr a, const ptr pp, ilong length);
+i32 EVP_PKEY_sign_init(ptr ctx);
+i32 EVP_PKEY_sign(ptr ctx, ptr sig, ptr siglen, const ptr tbs, ulong tbslen);
+
+i32 EVP_PKEY_verify_init(ptr ctx);
+i32 EVP_PKEY_verify(ptr ctx, ptr sig, ulong siglen, const ptr tbs, ulong tbslen);
+
+i32 EVP_Digest(const ptr data, ulong count, ptr md, ptr size, ptr type, ptr impl);
+void EVP_MD_free(ptr md);
+ptr EVP_MD_fetch(ptr ctx, const string algorithm, ptr properties);
