@@ -1,0 +1,9 @@
+# ------------------------
+# library "libsqlite3.so.0";
+# library "/nix/store/wlmvw1djy5rwxl431p74hlqj2w0jd05l-sqlite-3.35.5/lib/libsqlite3.so.0.8.6";
+library "/nix/store/gsss4560f68n8gfn0zx5gb7mgc0gp49n-sqlite-3.35.5/lib/libsqlite3.so.0";
+
+i32 sqlite3_exec(ptr db, const ptr sql, ptr callback, ptr args, ptr err);
+i32 sqlite3_open(const ptr filename, ptr db);
+i32 sqlite3_close(ptr db);
+const ptr sqlite3_errmsg(ptr db);
