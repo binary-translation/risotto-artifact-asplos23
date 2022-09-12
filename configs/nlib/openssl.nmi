@@ -1,4 +1,6 @@
-library "libssl.so.3";
+library "/nix/store/fxghvs3di1vjcaa3fhgr1xp7lpnf1jvs-openssl-1.1.1l/lib/libssl.so.1.1";
+# library "/nix/store/gc6x3qdhssgj50rrcdpr13sg8ly74q9r-openssl-1.1.1k/lib/libssl.so.1.1";
+# library "libssl.so.1.1";
 
 i32 OPENSSL_init_ssl(u64 opts, const ptr settings);
 
@@ -52,7 +54,11 @@ i32 EVP_PKEY_asn1_get0_info(ptr pp, ptr baseid, ptr flags, ptr pinfo, ptr str, p
 
 i32 RAND_bytes(ptr buf, i32 num);
 
-library "libcrypto.so.3";
+# const ptr  EVP_MD_CTX_md(const ptr ctx);
+
+library "/nix/store/fxghvs3di1vjcaa3fhgr1xp7lpnf1jvs-openssl-1.1.1l/lib/libcrypto.so.1.1";
+# library "/nix/store/gc6x3qdhssgj50rrcdpr13sg8ly74q9r-openssl-1.1.1k/lib/libcrypto.so.1.1";
+# library "libcrypto.so.3";
 
 ptr EVP_PKEY_CTX_new(ptr pkey, ptr e);
 
@@ -64,6 +70,22 @@ i32 EVP_PKEY_sign(ptr ctx, ptr sig, ptr siglen, const ptr tbs, ulong tbslen);
 i32 EVP_PKEY_verify_init(ptr ctx);
 i32 EVP_PKEY_verify(ptr ctx, ptr sig, ulong siglen, const ptr tbs, ulong tbslen);
 
-i32 EVP_Digest(const ptr data, ulong count, ptr md, ptr size, ptr type, ptr impl);
-void EVP_MD_free(ptr md);
-ptr EVP_MD_fetch(ptr ctx, const string algorithm, ptr properties);
+i32  EVP_Digest(const ptr data, ulong count, ptr md, ptr size, ptr type, ptr impl);
+# void EVP_MD_free(ptr md);
+ptr  EVP_MD_CTX_new();
+const ptr  EVP_MD_CTX_md(const ptr ctx);
+ptr  EVP_MD_CTX_md_data(const ptr ctx);
+void EVP_MD_CTX_free(ptr ctx);
+#ptr EVP_MD_fetch(ptr ctx, const string algorithm, ptr properties);
+#i32  EVP_Digest_MD2_loop(ptr args);
+ptr  MD5_Transform(ptr ctx, const ptr block);
+#i32  MD5_loop(ptr args);
+ptr  MD5(const ptr d, ulong n, ptr md);
+ptr  SHA1(const ptr d, ulong n, ptr md);
+ptr  SHA256(const ptr d, ulong n, ptr md);
+ptr  RSA_new();
+void RSA_free(ptr rsa);
+ptr  d2i_RSAPrivateKey(ptr a, ptr b, i32 len);
+i32  RSA_generate_multi_prime_key(ptr rsa, i32 bits, i32 primes, ptr e_value, ptr cb);
+i32  RSA_sign(i32 type, const ptr m, u32 m_len, ptr sigret, ptr siglen, ptr rsa);
+i32  RSA_verify(i32 type, const ptr m, u32 m_len, const ptr sigbuf, u32 siglen, ptr rsa);
