@@ -2,6 +2,8 @@
 
 export NR_RUNS=3
 
+taskset -p -c 0-111 $$
+
 DATASET=simsmall nix-shell --run ${RISOTTO_ROOT}/scripts/run_parsec.sh ${RISOTTO_ROOT}/default.nix
 DATASET=small nix-shell --run ${RISOTTO_ROOT}/scripts/run_phoenix.sh ${RISOTTO_ROOT}/default.nix
 nix-shell --run ${RISOTTO_ROOT}/scripts/run_math.sh ${RISOTTO_ROOT}/default.nix
