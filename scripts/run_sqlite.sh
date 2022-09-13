@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-NR_RUNS=10
-OUTPUT=results/sqlite.csv
+NR_RUNS=${NR_RUNS:=10}
+OUTPUT=${OUTPUT:=results/sqlite.csv}
 
 TASKSET="taskset -c 0-111"
 

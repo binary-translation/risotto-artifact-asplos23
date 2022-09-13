@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-NR_RUNS=10
-OUTPUT=results/cas.csv
+NR_RUNS=${NR_RUNS:=10}
+OUTPUT=${OUTPUT:=results/cas.csv}
 
 TASKSET="taskset -c 0-111"
 
