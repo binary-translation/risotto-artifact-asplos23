@@ -22,6 +22,13 @@ For the software dependencies, we rely on NixOS to have a unified execution envi
 You can either install NixOS as a full operationg system, or just as a package manager (Nix) on top of your Linux installation.
 You can find out more information on the [Nix download page](https://nixos.org/download.html).
 
+Required packages for the plots are available in the Nix environment, but you can also generate the plots through jupyter notebooks. You will need the following packages installed on your machine:
+```sh
+apt install python3-pip # install pip
+pip install notebook pandas matplotlib
+
+```
+
 ## Building the software
 Before running the experiments, we need to build the software and the benchmarks.
 You can try to build everything at once or separately.
@@ -74,6 +81,21 @@ These archives contain the binaries and input data for each benchmark.
 
 ## Running the benchmarks
 
-## Plotting the results
+This section shows how to run the benchmarks and plot each figure available in the paper.
+
+### Figure 12: PARSEC and Phoenix
+
+You can run these benchmarks by executing these two commands from the root of this repository (after running `source sourceme`):
+```sh
+nix-shell --run ${RISOTTO_ROOT}/scripts/run_parsec.sh ${RISOTTO_ROOT}/default.nix
+nix-shell --run ${RISOTTO_ROOT}/scripts/run_phoenix.sh ${RISOTTO_ROOT}/default.nix
+```
+The results will be available in `results/parsec-phoenix.csv`. Note that if you run the scripts multiple times, the results are appended to the csv file. If you want to start again from scratch, delete or rename the csv before running the benchmarks.
+
+To plot the figure, start the jupyter notebook server from the root of the repository (if it's not already started):
+```sh
+jupyter notebook
+```
+In the browser window, open the `plots/fig12.ipynb` and run all the cells in order. The plot should be available in the 9th cell.
 
 ## Proofs
