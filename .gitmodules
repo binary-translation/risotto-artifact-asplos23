@@ -7,9 +7,16 @@
 [submodule "a2a-benchmarks"]
 	path = a2a-benchmarks
 	url = https://github.com/rgouicem/a2a-benchmarks.git
-[submodule "benchmarks/sqlite"]
-	path = benchmarks/sqlite
-	url = https://github.com/sqlite/sqlite
 [submodule "proofs"]
 	path = proofs
 	url = https://github.com/binary-translation/risotto-proofs.git
+[submodule "benchmarks/sqlite-bench"]
+	path = benchmarks/sqlite-bench
+	url = https://github.com/rgouicem/sqlite-bench
+[submodule "benchmarks/cas-benchmark"]
+	path = benchmarks/cas
+	url = https://github.com/rgouicem/cas-benchmark
+[submodule "benchmarks/math-bench"]
+	path = benchmarks/math
+	url = https://github.com/rgouicem/math-bench
+  
