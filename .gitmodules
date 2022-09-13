@@ -13,3 +13,6 @@
 [submodule "benchmarks/sqlite-bench"]
 	path = benchmarks/sqlite-bench
 	url = https://github.com/rgouicem/sqlite-bench
+[submodule "benchmarks/cas-benchmark"]
+	path = benchmarks/cas
+	url = https://github.com/rgouicem/cas-benchmark
