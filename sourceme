@@ -3,4 +3,4 @@
 export RISOTTO_ROOT=${PWD}
 
 git submodule init
-git submodule update
+git submodule update --recursive
