@@ -98,6 +98,35 @@ jupyter notebook
 ```
 In the browser window, open the `plots/fig12.ipynb` and run all the cells in order. The plot should be available in the 9th cell.
 
+### Figure 13: openssl and sqlite
+
+You can run these benchmarks by executing these two commands from the root of this repository (after running `source sourceme`):
+```sh
+nix-shell --run ${RISOTTO_ROOT}/scripts/run_openssl.sh ${RISOTTO_ROOT}/default.nix
+nix-shell --run ${RISOTTO_ROOT}/scripts/run_sqlite.sh ${RISOTTO_ROOT}/default.nix
+```
+The results will be available in `results/openssl.csv` and `results/sqlite.csv`. Note that if you run the scripts multiple times, the results are appended to the csv files. If you want to start again from scratch, delete or rename the csv before running the benchmarks.
+
+To plot the figure, start the jupyter notebook server from the root of the repository (if it's not already started):
+```sh
+jupyter notebook
+```
+In the browser window, open the `plots/fig13.ipynb` and run all the cells in order. The plot should be available in the 11th cell.
+
+### Figure 14: math
+
+You can run these benchmarks by executing this command from the root of this repository (after running `source sourceme`):
+```sh
+nix-shell --run ${RISOTTO_ROOT}/scripts/run_math.sh ${RISOTTO_ROOT}/default.nix
+```
+The results will be available in `results/math.csv`. Note that if you run the scripts multiple times, the results are appended to the csv file. If you want to start again from scratch, delete or rename the csv before running the benchmarks.
+
+To plot the figure, start the jupyter notebook server from the root of the repository (if it's not already started):
+```sh
+jupyter notebook
+```
+In the browser window, open the `plots/fig14.ipynb` and run all the cells in order. The plot should be available in the 9th cell.
+
 ## Proofs
 
 The proofs have their own `README.md` (inside `proofs/`), with explanations. For evaluation, it's easiest to use the pre-build Docker image. Check the proofs with:
