@@ -1,0 +1,14 @@
+# ------------------------
+library "libm.so.6";
+
+# Maths
+f64 exp(f64 v);
+f64 sqrt(f64 v);
+f64 log(f64 v);
+
+f64 sin(f64 v);
+f64 cos(f64 v);
+f64 tan(f64 v);
+f64 asin(f64 v);
+f64 acos(f64 v);
+f64 atan(f64 v);
