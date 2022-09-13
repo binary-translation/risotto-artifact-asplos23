@@ -16,3 +16,6 @@
 [submodule "benchmarks/cas-benchmark"]
 	path = benchmarks/cas
 	url = https://github.com/rgouicem/cas-benchmark
+[submodule "benchmarks/math-bench"]
+	path = benchmarks/math
+	url = https://github.com/rgouicem/math-bench
