@@ -22,5 +22,5 @@ for c in ${configs[@]}; do
 
     # QEMUs
     ${TASKSET} ./a2a-benchmarks/bench.py -b micro.cas -d $c -r qemu -o ${OUTPUT} -a x86_64 -n $(nproc) -i ${NR_RUNS} -t qemu -c configs/qemu.config -vvv
-    ${TASKSET} ./a2a-benchmarks/bench.py -b micro.cas -d $c -r qemu -o ${OUTPUT} -a x86_64 -n $(nproc) -i ${NR_RUNS} -t risotto -c configs/qemu-risotto.config -vvv
+    ${TASKSET} ./a2a-benchmarks/bench.py -b micro.cas -d $c -r qemu -o ${OUTPUT} -a x86_64 -n $(nproc) -i ${NR_RUNS} -t risotto -c configs/risotto.config -vvv
 done

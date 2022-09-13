@@ -21,8 +21,8 @@ for b in ${benchmarks[@]}; do
     ${TASKSET} ./a2a-benchmarks/bench.py  -b phoenix.$b -d large -r native -o ${OUTPUT} -a aarch64 -n $(nproc) -i ${NR_RUNS} -t native -c configs/native.config -vvv
 
     # QEMUs
-    for q in master-6.1.0 no-fences tcg-tso risotto; do
-	${TASKSET} ./a2a-benchmarks/bench.py  -b phoenix.$b -d large -r qemu -o ${OUTPUT} -a x86_64 -n $(nproc) -i ${NR_RUNS} -t $q -c configs/qemu-${q}.config -vvv
+    for q in qemu no-fences tcg-tso risotto; do
+	${TASKSET} ./a2a-benchmarks/bench.py  -b phoenix.$b -d large -r qemu -o ${OUTPUT} -a x86_64 -n $(nproc) -i ${NR_RUNS} -t $q -c configs/${q}.config -vvv
     done
 done
 
