@@ -9,7 +9,7 @@
 	url = https://github.com/rgouicem/a2a-benchmarks.git
 [submodule "proofs"]
 	path = proofs
-	url = git@github.com:binary-translation/risotto-proofs.git
+	url = https://github.com/binary-translation/risotto-proofs.git
 [submodule "benchmarks/sqlite-bench"]
 	path = benchmarks/sqlite-bench
 	url = https://github.com/rgouicem/sqlite-bench
@@ -19,3 +19,4 @@
 [submodule "benchmarks/math-bench"]
 	path = benchmarks/math
 	url = https://github.com/rgouicem/math-bench
+  
