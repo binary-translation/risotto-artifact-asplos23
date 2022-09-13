@@ -13,7 +13,7 @@ International Conference on Architectural Support for Programming Languages and 
 This repository contains multiple submodules:
 * `qemu`: contains our modified QEMU (modified mappings for memory operations, support for native shared libraries, native CAS translation)
 * `benchmarks`: contains the benchmarks used in the paper
-* `proof`: contains the formal proof regarding our memory mappings and optimisations
+* `proofs`: contains the formal proof regarding our memory mappings and optimisations
 
 ## Requirements
 To run these experiments, you will need an arm64 machine with at least ARMv8.2.
