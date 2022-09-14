@@ -20,7 +20,7 @@ let
     p.binutils
     p.bison
     p.bc
-    p.pkg-config-unwrapped
+    p.pkg-config
     p.m4
     p.which
     p.gnumake
@@ -29,6 +29,7 @@ let
     p.autoconf
     p.sqlite
     p.openssl
+    p.glib
     p.yasm
     p.ninja
     p.pv
