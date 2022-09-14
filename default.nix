@@ -29,6 +29,7 @@ let
     p.autoconf
     p.sqlite
     p.openssl
+    p.glib
     p.yasm
     p.ninja
     p.pv
