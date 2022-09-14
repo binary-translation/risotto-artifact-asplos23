@@ -49,7 +49,7 @@ Note that this script downloads the pre-built binaries for the benchmarks and do
 You need to build our modified QEMU for the evaluation to work. It is located in the `qemu` submodule and can be built by running:
 ```sh
 source sourceme
-nix-shell --run scripts/build_qemu.sh default.nix
+nix-shell --run scripts/build_qemu.sh qemu.nix
 ```
 
 Since QEMU will be executed on the ARM machine, it has to be built for ARM. To simplify this, we recommend to build this directly on the ARM machine you will use to reproduce the results of the paper.
@@ -126,6 +126,20 @@ To plot the figure, start the jupyter notebook server from the root of the repos
 jupyter notebook
 ```
 In the browser window, open the `plots/fig14.ipynb` and run all the cells in order. The plot should be available in the 9th cell.
+
+### Figure 15: cas
+
+You can run these benchmarks by executing this command from the root of this repository (after running `source sourceme`):
+```sh
+nix-shell --run ${RISOTTO_ROOT}/scripts/run_cas.sh ${RISOTTO_ROOT}/default.nix
+```
+The results will be available in `results/cas.csv`. Note that if you run the scripts multiple times, the results are appended to the csv file. If you want to start again from scratch, delete or rename the csv before running the benchmarks.
+
+To plot the figure, start the jupyter notebook server from the root of the repository (if it's not already started):
+```sh
+jupyter notebook
+```
+In the browser window, open the `plots/fig15.ipynb` and run all the cells in order. The plot should be available in the 4th cell.
 
 ## Proofs
 
