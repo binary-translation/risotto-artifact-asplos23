@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Build qemu
-nix-shell --run ${RISOTTO_ROOT}/scripts/build_qemu.sh ${RISOTTO_ROOT}/default.nix
+nix-shell --run ${RISOTTO_ROOT}/scripts/build_qemu.sh ${RISOTTO_ROOT}/qemu.nix
 
 if [ "$1" == "build" ] ; then
     # Build benchmarks binaries
