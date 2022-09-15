@@ -32,6 +32,7 @@ let
     p.yasm
     p.ninja
     p.pv
+    p.jupyter
   ];
 
 in
