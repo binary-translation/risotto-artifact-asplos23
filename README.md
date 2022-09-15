@@ -71,8 +71,8 @@ If everything works fine, you can skip to [Running the benchmarks](#running-the-
 
 Note that this script downloads the pre-built binaries for the benchmarks and does not build them. If you want to build them, check the following sections.
 
-### Building QEMU
-You need to build our modified QEMU for the evaluation to work. It is located in the `qemu` submodule and can be built by running:
+#### Building QEMU
+You need to build our modified QEMU as well as the baselines for the evaluation to work. It is located in the `qemu` submodule and can be built by running:
 ```sh
 source sourceme
 nix-shell --run scripts/build_qemu.sh qemu.nix
@@ -103,7 +103,13 @@ These archives contain the binaries and input data for each benchmark.
 
 ##### Build binaries on x86_64 and arm64 machines
 
+On each machine, you can run the same commands to build all the benchmarks:
+```sh
+source sourceme
+nix-shell --run scripts/build_benchmarks.sh default.nix
+```
 
+Note that you will need to check the paths specified in the configuration files available in `config/*.config` and set them up properly.
 
 ### Running the benchmarks
 
