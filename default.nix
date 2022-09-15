@@ -9,7 +9,9 @@ let
 
   pypkgs = [ pkgs.python3Packages.pandas
              pkgs.python3Packages.tqdm
-             pkgs.python3Packages.matplotlib ];
+             pkgs.python3Packages.matplotlib
+             pkgs.python3Packages.seaborn
+             pkgs.python3Packages.numpy ];
 
   deps = p: [
     p.gcc10
