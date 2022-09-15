@@ -49,7 +49,9 @@ From the root directory of the repository, run these commands:
 source sourceme
 ./scripts/build.sh
 ./scripts/run_benchmarks.sh
+./scripts/plot.sh
 ```
+This will produce the figures from the paper (12 to 15) in the `plots/` directory, as pdf files.
 
 ## Detailed instructions
 
