@@ -41,15 +41,23 @@ pip install notebook pandas matplotlib
 
 ## Quick result reproduction
 
-This section details how to quickly reproduce the results of the paper in a fully automated way. If you have encounter any issue or only want to run a specific part of the evaluation, you can check the [Detailed instructions](#detailed-instructions) below.
+This section details how to quickly reproduce the results of the paper in a fully automated way.
+If you have encounter any issue or only want to run a specific part of the evaluation, you can check the [Detailed instructions](#detailed-instructions) below.
+
+From the root directory of the repository, run these commands:
+```sh
+source sourceme
+./scripts/build.sh
+./scripts/run_benchmarks.sh
+```
 
 ## Detailed instructions
 
-## Building the software
+### Building the software
 Before running the experiments, we need to build the software and the benchmarks.
 You can try to build everything at once or separately.
 
-### Building everything
+#### Building everything
 You can build everything by executing:
 
 ```sh
@@ -76,13 +84,13 @@ After running this script, you should have four versions of QEMU built, located 
 * `tcg-tso`: QEMU 6.1.0 + our memory mappings (used to evaluate the performance of our mappings)
 * `risotto`: QEMU 6.1.0 + our memory mappings + native CAS + native shared libraries
 
-### Building the benchmarks
+#### Building the benchmarks
 The benchmarks need to be built twice: once for arm64 and once for x86_64. You can do this in different ways:
 * Download pre-built binaries (recommended)
 * Build the x86_64 binaries on an x86_64 machine, and the arm64 binaries on an arm64 machine
 * Build everything on the same machine with cross-compilation for the non-native version.
 
-#### Downloading pre-built binaries
+##### Downloading pre-built binaries
 We provide an archive with all benchmarks packaged for both x86_64 and arm64 at [this address](https://nextcloud.in.tum.de/index.php/s/XenwcXiHy4TTZMC).
 You can just download and extract the archives wherever you want with:
 ```sh
@@ -91,15 +99,15 @@ tar xf <archive.tar.xz>
 
 These archives contain the binaries and input data for each benchmark.
 
-#### Build binaries on x86_64 and arm64 machines
+##### Build binaries on x86_64 and arm64 machines
 
-#### Build binaries with cross compilation
 
-## Running the benchmarks
+
+### Running the benchmarks
 
 This section shows how to run the benchmarks and plot each figure available in the paper.
 
-### Figure 12: PARSEC and Phoenix
+#### Figure 12: PARSEC and Phoenix
 
 You can run these benchmarks by executing these two commands from the root of this repository (after running `source sourceme`):
 ```sh
@@ -114,7 +122,7 @@ jupyter notebook
 ```
 In the browser window, open the `plots/fig12.ipynb` and run all the cells in order. The plot should be available in the 9th cell.
 
-### Figure 13: openssl and sqlite
+#### Figure 13: openssl and sqlite
 
 You can run these benchmarks by executing these two commands from the root of this repository (after running `source sourceme`):
 ```sh
@@ -129,7 +137,7 @@ jupyter notebook
 ```
 In the browser window, open the `plots/fig13.ipynb` and run all the cells in order. The plot should be available in the 11th cell.
 
-### Figure 14: math
+#### Figure 14: math
 
 You can run these benchmarks by executing this command from the root of this repository (after running `source sourceme`):
 ```sh
@@ -143,7 +151,7 @@ jupyter notebook
 ```
 In the browser window, open the `plots/fig14.ipynb` and run all the cells in order. The plot should be available in the 9th cell.
 
-### Figure 15: cas
+#### Figure 15: cas
 
 You can run these benchmarks by executing this command from the root of this repository (after running `source sourceme`):
 ```sh
