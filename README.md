@@ -16,18 +16,34 @@ This repository contains multiple submodules:
 * `proofs`: contains the formal proof regarding our memory mappings and optimisations
 
 ## Requirements
+
+### Hardware
+
 To run these experiments, you will need an arm64 machine with at least ARMv8.2.
+If you want to easily build the x86_64 versions of the benchmarks, you will also need an x86 machine.
+You can also cross-compile them on the ARM machine, but we do not provide instructions for this. You can adapt the building scripts to use a cross-compiler.
 
-For the software dependencies, we rely on NixOS to have a unified execution environment.
-You can either install NixOS as a full operationg system, or just as a package manager (Nix) on top of your Linux installation.
+### Software
+
+We rely on NixOS to have a unified execution environment.
+You can either install NixOS as a full operating system, or just as a package manager (Nix) on top of your Linux installation.
 You can find out more information on the [Nix download page](https://nixos.org/download.html).
-
-Required packages for the plots are available in the Nix environment, but you can also generate the plots through jupyter notebooks. You will need the following packages installed on your machine:
+The easy installation consists of using Nix as a package manager, installing it this way:
 ```sh
-apt install python3-pip # install pip
-pip install notebook pandas matplotlib
-
+sh <(curl -L https://nixos.org/nix/install) --daemon
 ```
+
+Required packages to reproduce the plots are available in the Nix environment, but you can also reproduce them on you local OS if you prefer. You will need the following packages:
+```sh
+apt install python3-pip                    # install pip
+pip install notebook pandas matplotlib
+```
+
+## Quick result reproduction
+
+This section details how to quickly reproduce the results of the paper in a fully automated way. If you have encounter any issue or only want to run a specific part of the evaluation, you can check the [Detailed instructions](#detailed-instructions) below.
+
+## Detailed instructions
 
 ## Building the software
 Before running the experiments, we need to build the software and the benchmarks.
