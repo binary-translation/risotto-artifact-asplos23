@@ -36,7 +36,7 @@ sh <(curl -L https://nixos.org/nix/install) --daemon
 Required packages to reproduce the plots are available in the Nix environment, but you can also reproduce them on you local OS if you prefer. You will need the following packages:
 ```sh
 apt install python3-pip                    # install pip
-pip install notebook pandas matplotlib
+pip install notebook pandas matplotlib seaborn
 ```
 
 ## Quick result reproduction
