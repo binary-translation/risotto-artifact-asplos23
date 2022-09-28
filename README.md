@@ -114,6 +114,10 @@ Note that you will need to check the paths specified in the configuration files 
 ### Running the benchmarks
 
 This section shows how to run the benchmarks and plot each figure available in the paper.
+Note that the provided scripts pin the benchmarks to a subset of cores, tailored for our test machine (cores 0 to 111).
+If you want to use your own machine, change the `taskset` command in the `scripts/run_benchmarks.sh` script to match your configuration.
+If you have a machine with multiple NUMA nodes, we suggest to pin the benchmarks to a single node.
+You can get the list of cores of each node with the `lscpu` command.
 
 #### Figure 12: PARSEC and Phoenix
 
